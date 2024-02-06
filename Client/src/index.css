@@ -33,6 +33,7 @@ body {
 * {
   margin: 0;
   padding: 0;
+  transition: all ease-in-out 0.3s;
 }
 
 @media (max-width: 980px) {
@@ -48,7 +49,7 @@ body {
   font-size: 1.1rem;
   outline: none;
 }
-.PhoneInputInput::placeholder{
+.PhoneInputInput::placeholder {
   padding: 5px;
 }
 /* width */
@@ -58,15 +59,22 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #b8f1b0;
+  background: var(--primary);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #e3fcbf;
+  background: var(--lower);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+[data-theme="dark"] {
+  --primary: #f1efef;
+  --secondary: black;
+  --medium: #7d7c7c;
+  --lower: white;
 }
