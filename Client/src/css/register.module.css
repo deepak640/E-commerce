@@ -1,0 +1,144 @@
+.contact_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 12vh);
+}
+.buttons {
+  display: flex;
+  width: 20vw;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.buttons .btn {
+  width: max-content;
+}
+.contact_container:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.contact_box {
+  max-width: 850px;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  border: solid 5px transparent;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.19);
+}
+
+.left {
+  background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    no-repeat center;
+  background-size: cover;
+  height: 100%;
+}
+
+.right {
+  padding: 25px 40px;
+}
+
+h2 {
+  position: relative;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+}
+
+h2:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 50px;
+  border-radius: 2px;
+  background-color: var(--lower);
+}
+
+.field {
+  width: 90%;
+  border: 2px solid rgba(0, 0, 0, 0);
+  outline: none;
+  background-color: rgba(230, 230, 230, 0.6);
+  color: var(--lower);
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  transition: 0.3s;
+}
+
+.field:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: var(--secondary);
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+
+.field:focus {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 880px) {
+  .contact_box {
+    height: 90%;
+    grid-template-columns: 1fr;
+  }
+
+  .field {
+    width: 100%;
+    font-size: medium;
+    padding: 0.5rem;
+  }
+
+  .contact_container {
+    height: 100%;
+    padding: 10px;
+  }
+
+  .right {
+    padding: 20px;
+  }
+
+  .left {
+    height: 200px;
+  }
+}
+
+.forgot {
+  display: block;
+  padding: 10px 0 10px 0;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+.style_two {
+  border: 0;
+  height: 1px;
+  margin: 10px 0 10px 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
