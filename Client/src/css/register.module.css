@@ -49,13 +49,13 @@
   padding: 25px 40px;
 }
 
-h2 {
+.register {
   position: relative;
   padding: 0 0 10px;
   margin-bottom: 10px;
 }
 
-h2:after {
+.register:after {
   content: "";
   position: absolute;
   left: 50%;
@@ -64,7 +64,7 @@ h2:after {
   height: 4px;
   width: 50px;
   border-radius: 2px;
-  background-color: var(--lower);
+  background-color: var(--color);
 }
 
 .field {
@@ -86,7 +86,7 @@ h2:after {
 .btn {
   width: 100%;
   padding: 0.5rem 1rem;
-  color: #fff;
+  color: var(--color);
   background-color: var(--secondary);
   font-size: 1.1rem;
   border: none;

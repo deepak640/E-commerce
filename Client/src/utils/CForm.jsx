@@ -7,7 +7,7 @@ export function CForm({ formdata, handleInputChange, handlePhoneInputChange }) {
 
   return (
     <div className={css.right}>
-      <h2>Register</h2>
+      <h2 className={css.register}>Register</h2>
       <input
         type="text"
         name="name"

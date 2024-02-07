@@ -23,7 +23,7 @@ const Login = () => {
         <form className={css.contact_box} onSubmit={handleSubmit}>
           <div className={css.left}></div>
           <div className={css.right}>
-            <h2>Login</h2>
+            <h2 className={css.login}>Login</h2>
             <input
               type="text"
               name="username"

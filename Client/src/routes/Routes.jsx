@@ -3,6 +3,7 @@ import { Routes as Switch, Route } from 'react-router-dom';
 import { Login, Home, Register, Products } from "../utils/Lazy";
 import Loader from 'src/utils/Loader';
 import Cart from 'src/components/Cart';
+import Confirmation from 'src/components/Confirmation';
 
 const Routes = () => {
 
@@ -16,6 +17,7 @@ const Routes = () => {
           <Route path='/Products' element={<Products />} />
           <Route path='/Products/:name' element={<Products />} />
           <Route path='/cart' element={<Cart/>} />
+          <Route path='/confirm' element={<Confirmation/>} />
         </Switch>
       </Suspense>
     </>

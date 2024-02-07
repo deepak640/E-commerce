@@ -42,14 +42,14 @@
   padding: 25px 40px;
 }
 
-h2 {
+.login {
   position: relative;
   padding: 10px 0 10px 0;
   margin-bottom: 20px;
   color: var(--color);
 }
 
-h2:after {
+.login:after {
   content: "";
   position: absolute;
   left: 50%;

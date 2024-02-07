@@ -6,7 +6,7 @@ export function VForm({ formdata, handleInputChange, handlePhoneInputChange }) {
   console.log('Vrender')
   return (
     <div className={css.right}>
-      <h2>Register</h2>
+      <h2 className={css.register}>Register</h2>
       <input
         type="text"
         name="name"
