@@ -2,14 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import css from "src/css/header.module.css";
 const Header = () => {
-  const setDarkMode = () => {
-    document.querySelector("body").setAttribute("data-theme", "dark");
-  };
-  const setLightMode = () => {
-    document.querySelector("body").setAttribute("data-theme", "light");
-  };
   const toggle = (e) => {
-    e.target.checked ? setDarkMode() : setLightMode();
+    document.querySelector("body").classList.toggle("dark");
   };
   return (
     <header className={css.header}>

@@ -7,17 +7,23 @@
   /* color: rgba(255, 255, 255, 0.87); */
   --primary: #f1efef;
   --secondary: #ccc8aa;
-  --medium: #7d7c7c;
-  --lower: #191717;
+  --background: white;
+  --color: #191717;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.dark {
+  --primary: #72727263;
+  --secondary: #7d7d7d;
+  --background: #7d7c7c;
+  --color: white;
+}
 a {
   font-weight: 500;
-  color: black;
+  color:var(--color);
   text-decoration: inherit;
 }
 
@@ -27,13 +33,13 @@ a:hover {
 
 body {
   background-color: var(--primary);
-  color: var(--lower) !important;
+  color: var(--color) !important;
 }
 
 * {
   margin: 0;
   padding: 0;
-  transition: all ease-in-out 0.3s;
+  transition: all ease 0.1s;
 }
 
 @media (max-width: 980px) {
@@ -45,7 +51,7 @@ body {
 .PhoneInputInput {
   background: transparent;
   border: none;
-  color: var(--lower);
+  color: var(--color);
   font-size: 1.1rem;
   outline: none;
 }
@@ -72,9 +78,3 @@ body {
   background: #555;
 }
 
-[data-theme="dark"] {
-  --primary: #f1efef;
-  --secondary: black;
-  --medium: #7d7c7c;
-  --lower: white;
-}

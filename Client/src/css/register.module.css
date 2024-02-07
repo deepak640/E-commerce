@@ -25,6 +25,7 @@
 }
 
 .contact_box {
+  color: var(--color);
   max-width: 850px;
   height: 70vh;
   display: grid;
@@ -93,7 +94,6 @@ h2:after {
   cursor: pointer;
   transition: all 0.3s linear;
 }
-
 
 .field:focus {
   background-color: #fff;
