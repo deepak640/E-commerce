@@ -138,7 +138,28 @@ const data = [
           );
         })}
       </div>
-      
+      <Swiper
+        pagination={true}
+        modules={[Pagination, Autoplay]}
+        className="mySwiper"
+        spaceBetween={30}
+        slidesPerView={1}
+        autoplay={{ delay: 4000 }}
+      >
+        {data.map((data, m) => {
+          return (
+            <SwiperSlide key={m}>
+              <div className={css.container}>
+                <p className={css.name}>{data.name}</p>
+                <p className={css.brand}>Brand {data.brand}</p>
+                <p className={css.category}>Category {data.category}</p>
+                <p className={css.numReviews}>Reviews : {data.numReviews}</p>
+                <p className={css.description}>({data.description})</p>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </>
   );
 };
