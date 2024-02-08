@@ -17,7 +17,6 @@ const Routes = () => {
           <Route path='/Products' element={<Products />} />
           <Route path='/Products/:name' element={<Products />} />
           <Route path='/cart' element={<Cart/>} />
-          {/* <Route path='/confirm' element={<Confirmation/>} /> */}
         </Switch>
       </Suspense>
     </>
