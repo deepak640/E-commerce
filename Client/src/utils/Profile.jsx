@@ -1,15 +1,14 @@
-import { Profile } from "src/utils/Profile";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import {
+  CustomerServiceOutlined,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
+import { Avatar, Badge } from "antd";
+import avatar from "src/assets/Person.png";
 import css from "src/css/header.module.css";
-const Header = () => {
-  const [log, setLog] = useState(true);
-  const toggle = (e) => {
-    document.querySelector("body").classList.toggle("dark");
-  };
-  return log ? (
-    <Profile toggle={toggle} />
-  ) : (
+import React from "react";
+export function Profile({ toggle }) {
+  const mobNav = window.matchMedia("screen and (max-width: 950px)").matches;
+  return (
     <header className={css.header}>
       <nav>
         <div className={css.logo}>
@@ -17,12 +16,15 @@ const Header = () => {
             Humayun.<span>K</span>
           </a>
         </div>
-        <input
-          type="checkbox"
-          id={css.menu_toggle}
-        />
+        <input type="checkbox" id={css.menu_toggle} />
         <label htmlFor={css.menu_toggle} className={css.menu_icon}>
-          &#9776;
+          <Avatar
+            size={39}
+            style={{
+              margin: "0 10px 0 10px",
+            }}
+            icon={<img src={avatar} />}
+          />
         </label>
         <ul className={css.menu}>
           <label className={css.switch}>
@@ -48,21 +50,42 @@ const Header = () => {
             <span className={css.slider}></span>
           </label>
           <li>
-            <Link to={"/"}>Home</Link>
+            <Badge
+              count={5}
+              style={{
+                margin: "0 20px 0 20px",
+              }}
+              size="small"
+            >
+              <ShoppingCartOutlined
+                style={{
+                  fontSize: "32px",
+                  margin: "0 20px 0 20px",
+                }}
+              />
+            </Badge>
           </li>
           <li>
-            <Link to={"/"}>Contact</Link>
+            <CustomerServiceOutlined
+              style={{
+                fontSize: "32px",
+                margin: "0 20px 0 20px",
+              }}
+            />
           </li>
-          <li>
-            <Link to={"/"}>About</Link>
-          </li>
-          <li>
-            <Link to={"/login"}>Login</Link>
-          </li>
+          {mobNav ? null : (
+            <li>
+              <Avatar
+                size={39}
+                style={{
+                  margin: "0 10px 0 10px",
+                }}
+                icon={<img src={avatar} />}
+              />
+            </li>
+          )}
         </ul>
       </nav>
     </header>
   );
-};
-
-export default Header;
+}
