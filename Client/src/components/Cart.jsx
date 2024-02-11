@@ -33,7 +33,7 @@ const Cart = () => {
               <option className={css.option}>2</option>
               <option className={css.option}>3</option>
             </select>
-            { rate ? <Rate/> : <Rate allowHalf onChange={handleRatingChange} />}
+            { rate ? <Rate allowHalf defaultValue={rate} disabled/> : <Rate allowHalf onChange={handleRatingChange} />}
             <div className={css.buttons}>
               <button className={`${css.addtocart} ${css.btn}`}>
                 Add to Cart

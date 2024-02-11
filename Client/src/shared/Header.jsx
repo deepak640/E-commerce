@@ -1,15 +1,20 @@
-import { Profile } from "src/utils/Profile";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+import { Avatar, Badge } from "antd";
 import React, { useState } from "react";
+import avatar from "src/assets/Person.png";
 import { Link } from "react-router-dom";
 import css from "src/css/header.module.css";
 const Header = () => {
-  const [log, setLog] = useState(true);
+  const [log, setLog] = useState(false);
   const toggle = (e) => {
     document.querySelector("body").classList.toggle("dark");
   };
-  return log ? (
-    <Profile toggle={toggle} />
-  ) : (
+  const [mobNav, setMobNav] = useState(true);
+  const handleBar = (e) => {
+    setMobNav(e.target.checked);
+    console.log(e.target.checked);
+  };
+  return (
     <header className={css.header}>
       <nav>
         <div className={css.logo}>
@@ -19,11 +24,22 @@ const Header = () => {
         </div>
         <input
           type="checkbox"
+          onClick={(e) => handleBar(e)}
           id={css.menu_toggle}
         />
-        <label htmlFor={css.menu_toggle} className={css.menu_icon}>
-          &#9776;
-        </label>
+        {log ? (
+          <label htmlFor={css.menu_toggle} className={css.menu_icon}>
+            <Avatar
+              size={39}
+              style={{ margin: "0 10px 0 10px" }}
+              icon={<img src={avatar} />}
+            />
+          </label>
+        ) : (
+          <label htmlFor={css.menu_toggle} className={css.menu_icon}>
+            &#9776;
+          </label>
+        )}
         <ul className={css.menu}>
           <label className={css.switch}>
             <span className={css.sun}>
@@ -47,18 +63,45 @@ const Header = () => {
             />
             <span className={css.slider}></span>
           </label>
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"/"}>Contact</Link>
-          </li>
-          <li>
-            <Link to={"/"}>About</Link>
-          </li>
-          <li>
-            <Link to={"/login"}>Login</Link>
-          </li>
+          {log ? (
+            <>
+              <li>
+                <Badge
+                  count={5}
+                  style={{ margin: "0 20px 0 20px" }}
+                  size="small"
+                >
+                  <ShoppingCartOutlined
+                    style={{ fontSize: "32px", margin: "0 20px 0 20px" }}
+                  />
+                </Badge>
+              </li>
+              {mobNav === false && (
+                <li>
+                  <Avatar
+                    size={39}
+                    style={{ margin: "0 10px 0 10px" }}
+                    icon={<img src={avatar} />}
+                  />
+                </li>
+              )}
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to={"/"}>Home</Link>
+              </li>
+              <li>
+                <Link to={"/"}>Contact</Link>
+              </li>
+              <li>
+                <Link to={"/"}>About</Link>
+              </li>
+              <li>
+                <Link to={"/login"}>Login</Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </header>
